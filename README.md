@@ -16,7 +16,6 @@ Kyung-Hee University Software Convergence (Jun Yong Lee, Tae Kyoung Lee)
 ![image](https://github.com/user-attachments/assets/79e69214-8971-4088-9471-6dcabaeb0a1e)
 
 #### 4. Model & Objective Function
-$
 \documentclass{article}
 \usepackage{amsmath}
 
@@ -59,7 +58,6 @@ d_{i,학교} &\geq 1 & \forall i \text{ with } y_i = 1
 \end{itemize}
 
 \end{document}
-$
 
 #### 6. Reference
 - 도시의 하늘을 여는 한국형 도심항공교통(K-UAM) 로드맵 (관계부처합동, 2020)
