@@ -21,8 +21,13 @@
 ![image](https://github.com/user-attachments/assets/182d6d62-3574-4390-b966-488b09086b1c)
 ![image](https://github.com/user-attachments/assets/76728de8-3937-40a3-a16e-563a6322c569)
 
+#### 5. Tools
+- Language : Python 3.11.7
+- Enviroment : VSCode
+- Libraries : numpy, pandas, geopandas, folium, PuLP
 
-#### 5. References
+
+#### 6. References
 - 도시의 하늘을 여는 한국형 도심항공교통(K-UAM) 로드맵 (관계부처합동, 2020)
 - 성유진, 김새벽, 최윤수, 조성길. (2023-06-02). 도심항공교통(UAM) 버티포트(Vertiport) 최적입지 선정 및 경로선정을 통한 이동시간 효용성 분석. 대한공간정보학회 학술대회, 대전.
 - 박정원, 강나연, 송병덕. (2023-05-31). 다차원적 도심 물류 네트워크 설계: UAM vertiport 및 지상물류허브 동시 입지 선정 최적화. 대한산업공학회 춘계공동학술대회 논문집, 여수.
