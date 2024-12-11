@@ -67,7 +67,10 @@ from shapely.geometry import Point
 #### 7. Demo
 
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/fe901b1d-2bee-4ddc-932b-fc7fce2bc15a">
-<a href = "file:///Users/taekyounglee/Documents/projects/DA_Capstone/vertiport_map.html">Link to Map</a>
+
+<a href="https://your-cloud-service-link.com/vertiport_map.html">Link to Map</a>
+
+
 
 
 #### 8. Conclusion and Future work
