@@ -13,7 +13,7 @@
 - To overcome the challenges of mass production and popularization of UAM, it is essential to leverage the experience and expertise of the automotive industry.
 - The key to the growth of the UAM industry lies in public acceptance within urban areas.
 - A comprehensive reorganization of the transportation network system, including the core infrastructure of UAM—vertiport networks—is crucial.
-- 
+  
 #### 3. Project Summary
 
 Experts in various fields emphasize that numerous factors must be addressed for urban air mobility (UAM) to become a viable and widely accepted future mode of transportation. Among these, we aim to tackle a specific issue highlighted by a domestic telecommunications company’s pilot project team. This team underlined the necessity of a comprehensive reorganization of the transportation network system centered around vertiport networks, the core infrastructure of UAM. Before addressing the broader transportation network, this study focuses on optimizing vertiport locations, as their placement is critical to the success of UAM.
