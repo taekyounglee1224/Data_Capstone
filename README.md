@@ -68,7 +68,7 @@ from shapely.geometry import Point
 
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/fe901b1d-2bee-4ddc-932b-fc7fce2bc15a">
 
-<a href="file:///Users/taekyounglee/Documents/projects/DA_Capstone/vertiport_map.html">Link to Map</a> : Can also go to the html/ directory
+View Map : <a href = "https://github.com/taekyounglee1224/Data_Capstone/tree/main/html">Link to directory</a>
 
 
 
