@@ -60,7 +60,7 @@ from pulp import LpProblem, LpMinimize, LpVariable, lpSum, LpBinary, PULP_CBC_CM
 from shapely.geometry import Point
 ```
 
-Place the dataset in the data/ directory
+- Place the dataset in the data/ directory
 
 
 
