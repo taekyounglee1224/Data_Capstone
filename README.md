@@ -5,19 +5,26 @@
 ##### Kyung-Hee University Software Convergence (Jun Yong Lee, Tae Kyoung Lee)
 ------------------------------------------------------------------------------
 #### 1. What is UAM?
-- UAM은 기체, 운항, 서비스를 총칭하는 개념
-- 도심화 + 수도권 집중 지상교통 혼잡에 도시당 UAM터미널(Vertiport) 30여개와 300여대의 기체가 비행할 것으로 전망함
-- UAM은 도시인구 증가에 따른 도시교통 수요의 야기된 문제의 여러 문제(대기오염, 교통소음, 지구온난화, 교통스트레스)를 해결할 미래 대안으로 평가!
+- UAM (Urban Air Mobility) is a comprehensive concept encompassing aircraft, operations, and services.
+- With urbanization and congestion in ground transportation due to population concentration in metropolitan areas, it is expected that each city will have around 30 UAM terminals (vertiports) and approximately 300 aircraft in operation.
+- UAM is considered a future alternative to address various urban transportation issues caused by increasing urban populations, including air pollution, traffic noise, global warming, and traffic-induced stress.
 
-#### 2. UAM과 관련된 연구의 필요성
-- UAM의 대량생산과 대중화를 극복하기 위해 자동차 산업의 경험과 노하우를 활용할 필요 있음
-- UAM의 산업 선장의 핵심, 도심 대중의 수용성이 최대관건
-- UAM의 핵심 인프라인 버티포트 네트워크의 종합적인 교통망 체계 개편이 필수적
+#### 2. Research Needs
+- To overcome the challenges of mass production and popularization of UAM, it is essential to leverage the experience and expertise of the automotive industry.
+- The key to the growth of the UAM industry lies in public acceptance within urban areas.
+- A comprehensive reorganization of the transportation network system, including the core infrastructure of UAM—vertiport networks—is crucial.
+- 
+#### 3. Project Summary
 
-#### 3. Research Idea
+Experts in various fields emphasize that numerous factors must be addressed for urban air mobility (UAM) to become a viable and widely accepted future mode of transportation. Among these, we aim to tackle a specific issue highlighted by a domestic telecommunications company’s pilot project team. This team underlined the necessity of a comprehensive reorganization of the transportation network system centered around vertiport networks, the core infrastructure of UAM. Before addressing the broader transportation network, this study focuses on optimizing vertiport locations, as their placement is critical to the success of UAM.
+
+The primary goal of this research is to resolve this issue with a particular focus on the southern Gyeonggi region. Several reasons justify this regional focus. Currently, UAM operation plans are limited to mid-range routes with a maximum distance of approximately 40 km. This operational range suggests that considering the entirety of Gyeonggi Province would exceed the scope of the problem at hand. Additionally, while exploring options for the capital city of Seoul may seem logical, numerous existing studies have already examined this area. These studies have proposed demonstration routes and identified optimal locations for vertiports based on factors such as noise levels. The abundance of prior research on Seoul indicates that further studies in this region would likely focus on addressing the limitations of previous work.
+
+Although complementing prior research is valuable, this study seeks to take on a more challenging and exploratory approach by focusing on a different region. The southern Gyeonggi area was chosen for its proximity to the researchers’ academic institution, enabling deeper contextual understanding and practical engagement. Thus, this study focuses on key cities in southern Gyeonggi, including Suwon, Yongin, Osan, and Hwaseong, to identify optimal vertiport locations and contribute to the successful deployment of UAM in the region.
+
+#### 4. Project Idea
 ![image](https://github.com/user-attachments/assets/79e69214-8971-4088-9471-6dcabaeb0a1e)
 
-#### 4. Model & Objective Function
 ![image](https://github.com/user-attachments/assets/182d6d62-3574-4390-b966-488b09086b1c)
 ![image](https://github.com/user-attachments/assets/76728de8-3937-40a3-a16e-563a6322c569)
 
@@ -26,32 +33,59 @@
 - Enviroment : VSCode
 - Libraries : numpy, pandas, geopandas, folium, PuLP
 
-#### 6. project summary
 
-해당 분야의 다양한 전문가들은 도심항공 교통이 활성화되고 정말 미래 교통 수단으로 자리잡기 위해서 필요한 부분이 많음을 강조한다. 우리는 그 중에서도 국내의 통신사의 관련 실증 사업팀이 강조한 이야기를 해결하고자 한다. 해당 관계자는 UAM의 핵심 인프라인 버티포트 네트워크의 종합적인 교통망 체계 개편이 필수적이라고 강조한다. 네트워크의 종합적인 교통망 체계 이전에 버티포트에 대해 집중한다. 최적의 입지에 버티포트가 설치되어야 한다. 
+#### 6. Code Instruction
+```
+git clone https://github.com/https://github.com/taekyounglee1224/Data_Capstone.git
+```
+```
+capstone.ipynb
+```
+```
+import geopandas as gpd
+import folium
+from IPython.display import display
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from folium import Choropleth
+from folium import LayerControl, FeatureGroup
+import matplotlib.pyplot as plt
+import matplotlib.lines as mlines
+import matplotlib.patches as mpatches
+import numpy as np
+import matplotlib.colors as mcolors
+from shapely.geometry import Polygon, box
+from pyproj import CRS
+from pulp import LpProblem, LpMinimize, LpVariable, lpSum, LpBinary, PULP_CBC_CMD
+from shapely.geometry import Point
+```
 
-본 연구의 목표는 특히 경기 남부 지역에 집중하여 문제를 해결하고자 한다. 경기 남부 지역만 고려하게 된 데에는 몇가지 이유가 존재한다. 현행 계획상 UAM의 운행거리는 최대 40km 수준의 중거리 노선을 계획하고 있다. 이는 경기도 전역을 고려하는 것이 현재 해결하고자 하는 문제의 수준과 거리가 있음을 말한다. 또한 대표 도심인 서울특별시를 고려하는 방안도 있겠으나, 서울 특별시의 사례와 관련하여는 유수의 선행연구가 존재하였다(성유진 et al., 2023; 정현석 & 안종욱, 2024). 각 연구에서는 실증 노선을 제안하거나 소음 수준을 고려하여 최적입지를 선정하였다. 이외에도 서울 특별시를 대상으로 진행한 연구는 쉽게 찾아볼 수 있었고 문제를 해결함에 있어 기존 연구의 단점을 보완하는 성격을 가질 것이다. 물론 선행연구를 보완하는 것 또한 연구로서 가치가 있으나, 본 연구는 연구로서 도전적인 경험을 해보고자 다른 지역을 선정하고자 하였다. 따라서 연구자들이 재학중인 학교의 인근 지역에 대해서 문제를 해결해보고자 시도하였다. 그러므로 경기 남부의 주요 도시로서 수원, 용인, 오산, 화성시를 고려하게 되었다. 
-
-
-#### 7. Code Instruction
+Place the dataset in the data/ directory
 
 
 
-#### 8. Demo
+#### 7. Demo
 
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/fe901b1d-2bee-4ddc-932b-fc7fce2bc15a">
+<a href = "file:///Users/taekyounglee/Documents/projects/DA_Capstone/vertiport_map.html">Link to Map</a>
 
 
-#### 9. Conclusion and Future work
+#### 8. Conclusion and Future work
 
 ![image](https://github.com/user-attachments/assets/e620377b-e48b-4bf6-838f-03660d88251c)
 
-한편, 본 연구에는 몇 가지 한계점도 존재한다. 첫째, 데이터의 범위가 수도권으로 국한되어 있어 다른 지역이나 국가 단위로 확대 적용할 경우 추가적인 변수 및 제약 조건이 필요하다. 예를 들어, 국토 면적이 넓은 지역에서는 후보지 간 거리가 더 멀어질 수 있으며, 이로 인해 모델의 복잡성이 증가할 가능성이 있다. 둘째, 최적화 모델에서 사용된 입력 데이터가 현재 시점의 통계나 지리 정보에 기반하고 있어, 시간이 지남에 따라 변화할 수 있는 요소들(예: 인구 이동, 산업 변화 등)을 충분히 반영하지 못할 가능성이 있다. 셋째, 본 연구는 물류 및 이동성 향상에 초점을 맞추었으나, 환경적 요인, 지역 주민의 수용성, 정책적 제한 등 비계량적인 요소를 포함하지 않았다. 이러한 요인은 향후 실질적 실행 단계에서 중요한 영향을 미칠 수 있다. 또한, 수집한 데이터들이 최신 동향을 반영했다고 보기 어렵기에, 아직 구축되지 않은 미래 산업에 대한 분석의 정확성을 명확히 보장하기에 한계가 있을 수 있다.
-따라서 향후 연구 방향으로는 다음과 같은 방안을 제시할 수 있다. 첫째, 데이터 범위를 전국 단위로 확대하여 보다 보편적이고 일반화된 모델을 구축할 필요가 있다. 이를 통해 국가 차원의 물류 및 이동성 향상 전략 수립에 기여할 수 있다. 둘째, 동적 데이터를 활용하여 시간에 따른 변화 추세를 반영한 모델을 개발할 필요가 있다. 이를 위해 머신러닝이나 인공지능 기법을 결합하여 보다 유연한 모델을 설계할 수 있을 것이다. 셋째, 환경적 요인과 정책적 제한 조건을 추가적으로 반영한 다목적 최적화 모델을 구축함으로써, 환경 보호와 지역 주민의 수용성을 동시에 고려하는 방향으로 연구를 확장할 수 있다. 이를 통해 이론적 연구를 넘어 실질적 정책 수립 및 실행 단계에서도 유용하게 활용될 수 있을 것이다
+1. Expanding the Scope of Data to a National Scale
+Developing a more universal and generalized model by expanding the dataset to include national-level data could contribute to the formulation of logistics and mobility improvement strategies at the country level.
+
+2. Incorporating Dynamic Data for Temporal Trends
+Utilizing dynamic data to capture temporal trends would enable the development of models that reflect changes over time. This could be achieved by integrating machine learning or artificial intelligence techniques to design more adaptive and flexible models.
+
+3. Building Multi-Objective Optimization Models
+Expanding the research to include additional factors such as environmental considerations and policy constraints could result in a multi-objective optimization model that balances environmental protection and community acceptance. This would extend the utility of the study beyond theoretical exploration, making it applicable to practical policy-making and implementation stages.
 
 
 
-#### 6. References
+#### 9. References
 - 도시의 하늘을 여는 한국형 도심항공교통(K-UAM) 로드맵 (관계부처합동, 2020)
 - 성유진, 김새벽, 최윤수, 조성길. (2023-06-02). 도심항공교통(UAM) 버티포트(Vertiport) 최적입지 선정 및 경로선정을 통한 이동시간 효용성 분석. 대한공간정보학회 학술대회, 대전.
 - 박정원, 강나연, 송병덕. (2023-05-31). 다차원적 도심 물류 네트워크 설계: UAM vertiport 및 지상물류허브 동시 입지 선정 최적화. 대한산업공학회 춘계공동학술대회 논문집, 여수.
